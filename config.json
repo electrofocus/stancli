@@ -1,0 +1,4 @@
+{
+  "url": "nats://0.0.0.0:4222",
+  "cluster_id": "test-cluster"
+}
