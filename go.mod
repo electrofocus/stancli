@@ -1,4 +1,4 @@
-module stancli
+module github.com/electrofocus/stancli
 
 go 1.19
 

@@ -119,7 +119,7 @@ func sub(subject string, stanConn stan.Conn) error {
 
 	const group = "local"
 
-	if _, err := stanConn.QueueSubscribe(subject, group, handle); err != nil {
+	if _, err := stanConn.QueueSubscribe(subject, group, handle, stan.SetManualAckMode()); err != nil {
 		fmt.Printf("can't subscribe stan (%s)\n", err)
 		return err
 	}
@@ -131,6 +131,7 @@ func sub(subject string, stanConn stan.Conn) error {
 
 func handle(msg *stan.Msg) {
 	fmt.Printf("%s\n", msg.Data)
+	_ = msg.Ack()
 }
 
 type config struct {
