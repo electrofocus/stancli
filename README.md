@@ -23,18 +23,18 @@ after that type or paste your message body. Finally, to publish message hit `Ent
 
 ## Configuration
 
-To connect to Nats MQ, you need to specify the configuration. The configuration file contains the following structure in JSON format:
+To connect to Nats MQ, you need to specify configuration. Configuration file contains following structure in JSON format:
 ```json
 {
   "url": "nats://0.0.0.0:4222",
   "cluster_id": "test-cluster"
 }
 ```
-There is an example of a configuration file in the repository.
+There is an example of a configuration file in repository.
 
-You can specify the path to the configuration file using the `-config` flag. For expample:
+You can specify path to configuration file using `-config` flag. For expample:
 ```
 ./stancli sub some.subject -config ./custom-config.json
 ```
 
-By default, the path to the configuration file is `./config.json`, so you can **omit** the flag if you use a file named `config.json` located next to the executable of stancli.
+By default, path to configuration file is `./config.json`, so you can **omit** flag if you use a file named `config.json` located next to executable of stancli.
