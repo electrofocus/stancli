@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"flag"
 	"fmt"
@@ -130,8 +131,15 @@ func sub(subject string, stanConn stan.Conn) error {
 }
 
 func handle(msg *stan.Msg) {
-	fmt.Printf("%s\n", msg.Data)
-	_ = msg.Ack()
+	defer msg.Ack()
+
+	var buf bytes.Buffer
+	if err := json.Indent(&buf, msg.Data, "", "    "); err != nil {
+		fmt.Printf("%s\n", msg.Data)
+		return
+	}
+
+	fmt.Println(buf.String())
 }
 
 type config struct {
