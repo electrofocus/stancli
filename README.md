@@ -1,7 +1,7 @@
 # stancli
 
 ## About
-Command line client for [STAN](https://docs.nats.io/legacy/stan/intro) messaging.
+Command line client for [STAN](https://docs.nats.io/legacy/stan/intro) messaging. Prefer to use v2 and check new [README.md](https://github.com/electrofocus/stancli/tree/main/v2) in v2 subdirectory.
 
 ## Usage
 
